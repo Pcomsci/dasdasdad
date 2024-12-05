@@ -1,174 +1,126 @@
 import React from "react";
 
-const StudentForm = () => {
+const Page = () => {
   return (
-    <div className="min-h-screen flex bg-gray-100">
-      {/* Sidebar */}
-      <aside className="w-1/4 bg-white shadow-md flex flex-col p-6">
-        {/* Logo Section */}
-        <div className="mb-8">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSxRrTlrGYXiOBTxS82oN2RTjgbfiLy9jLkQ&s"
-            alt="Logo"
-            className="w-20 h-auto mx-auto mb-4"
-          />
-          <h1 className="text-center text-lg font-bold text-blue-600">
-            ระบบจัดเก็บข้อมูล
-            <br />
-            โรงเรียนสตร้องทอง
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-10">
+      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8">
+        {/* Header */}
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-blue-600">
+            ระบบจัดเก็บข้อมูลโรงเรียนสตรีจอ่างทอง
           </h1>
         </div>
-        <nav>
-          <ul>
-            <li className="mb-4">
-              <a
-                href="#"
-                className="flex items-center text-blue-600 font-medium space-x-3 hover:text-blue-800"
-              >
-                <span className="text-xl">👤</span>
-                <span>จัดการรายชื่อนักเรียน</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      {/* Main Content */}
-      <main className="flex-1 p-10">
-        {/* Header */}
-        <header className="flex justify-between items-center mb-8">
-          <h2 className="text-xl font-semibold text-gray-700">
-            จัดการรายชื่อนักเรียน <span className="text-gray-400">&gt;</span>{" "}
-            สร้างรายชื่อนักเรียน
-          </h2>
-          <img
-            src="/profile-pic.jpg"
-            alt="Profile"
-            className="w-10 h-10 rounded-full border-2 border-blue-600 shadow"
-          />
-        </header>
 
         {/* Form Section */}
-        <section className="bg-white shadow-md rounded-lg p-8">
-          <h3 className="text-lg font-bold text-gray-700 mb-6">ข้อมูลเบื้องต้น</h3>
-          <form className="space-y-6">
-            {/* Personal Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">ชื่อ</label>
-                <input
-                  type="text"
-                  placeholder="กรุณากรอกชื่อ"
-                  className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">นามสกุล</label>
-                <input
-                  type="text"
-                  placeholder="กรุณากรอกนามสกุล"
-                  className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">เบอร์โทรศัพท์</label>
-                <input
-                  type="text"
-                  placeholder="กรุณากรอกเบอร์โทรศัพท์"
-                  className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">อีเมล</label>
-                <input
-                  type="email"
-                  placeholder="กรุณากรอกอีเมล"
-                  className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-            </div>
-
-            {/* Address */}
+        <form>
+          {/* ข้อมูลเบื้องต้น */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {/* ชื่อ */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">ที่อยู่</label>
+              <label className="block text-sm font-medium text-gray-700">ชื่อ</label>
               <input
                 type="text"
-                placeholder="กรุณากรอกที่อยู่"
-                className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="กรุณากรอกชื่อ"
+                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
               />
             </div>
-
-            {/* Class Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">ชั้นปี</label>
-                <select
-                  className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option>กรุณาเลือกชั้นปี</option>
-                  <option>ปีที่ 1</option>
-                  <option>ปีที่ 2</option>
-                  <option>ปีที่ 3</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">ห้อง</label>
-                <select
-                  className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option>กรุณาเลือกห้อง</option>
-                  <option>A</option>
-                  <option>B</option>
-                  <option>C</option>
-                </select>
-              </div>
-            </div>
-
-            {/* Note */}
+            {/* นามสกุล */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">หมายเหตุ</label>
-              <textarea
-                placeholder="กรุณากรอกหมายเหตุ"
-                rows={3}
-                className="w-full border-gray-300 rounded-lg shadow-sm px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-              ></textarea>
-            </div>
-
-            {/* Status */}
-            <div className="flex items-center">
-              <label htmlFor="status" className="text-sm font-medium text-gray-700 mr-4">
-                สถานะใช้งาน
-              </label>
+              <label className="block text-sm font-medium text-gray-700">นามสกุล</label>
               <input
-                type="checkbox"
-                id="status"
-                className="w-6 h-6 text-blue-600 rounded focus:ring-blue-500"
+                type="text"
+                placeholder="กรุณากรอกนามสกุล"
+                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
               />
             </div>
-
-            {/* Buttons */}
-            <div className="flex justify-end space-x-4">
-              <button
-                type="reset"
-                className="px-4 py-2 bg-white border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50"
-              >
-                ย้อนกลับ
-              </button>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500"
-              >
-                บันทึก
-              </button>
+            {/* เบอร์โทรศัพท์ */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700">เบอร์โทรศัพท์</label>
+              <input
+                type="text"
+                placeholder="กรุณากรอกเบอร์โทรศัพท์"
+                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
             </div>
-          </form>
-        </section>
-      </main>
+            {/* อีเมล */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700">อีเมล</label>
+              <input
+                type="email"
+                placeholder="กรุณากรอกอีเมล"
+                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+          </div>
+
+          {/* ชั้นเรียน */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {/* ชั้นปี */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700">ชั้นปี</label>
+              <select
+                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              >
+                <option>กรุณาเลือกชั้นปี</option>
+                <option>ม.1</option>
+                <option>ม.2</option>
+                <option>ม.3</option>
+              </select>
+            </div>
+            {/* ห้อง */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700">ห้อง</label>
+              <select
+                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              >
+                <option>กรุณาเลือกห้อง</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+          </div>
+
+          {/* หมายเหตุ */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700">หมายเหตุ</label>
+            <textarea
+              placeholder="กรุณากรอกหมายเหตุ"
+              className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            ></textarea>
+          </div>
+
+          {/* สถานะใช้งาน */}
+          <div className="flex items-center mb-6">
+            <input
+              type="checkbox"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            />
+            <label className="ml-2 text-sm text-gray-900">สถานะใช้งาน</label>
+          </div>
+
+          {/* ปุ่มบันทึกและย้อนกลับ */}
+          <div className="flex justify-end space-x-4">
+            <button
+              type="button"
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg shadow hover:bg-gray-300"
+            >
+              ย้อนกลับ
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+            >
+              บันทึก
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default StudentForm;
+export default Page;
 
 
 
